@@ -2,7 +2,7 @@
 <nav id="nav">
     <ul class="links">
         {% for item in collections.navigation %}
-            <li {% if item.url == page.url %}class="active"{% endif %}><a href="{{ item.url }}">{{ item.data.title }}</a></li>
+            <li {% if item.url == page.url %}class="active"{% endif %}><a href="{{ item.url }}">{{ item.data.navigation.title }}</a></li>
         {% endfor %}
     </ul>
     <!-- <ul class="links">

@@ -7,6 +7,9 @@ navigation:
     link: /
 ---
 
+{% from "components/post_item.njk" import post_item %}
+{% from "components/post_featured.njk" import post_featured %}
+
 <!-- Main -->
 <div id="main">
     <div class="inner">
@@ -17,21 +20,7 @@ navigation:
         {% if featuredPost == null %}
             <p>There are no posts yet.</p>
         {% else %}
-            <article class="post featured">
-                <header class="major">
-                    <span class="date">{{ featuredPost.date|postDate }}</span>
-                    <h2>
-                        <a href="{{ featuredPost.url }}">{{ featuredPost.data.title }}</a>
-                    </h2>
-                    <p>{{ featuredPost.data.description }}</p>
-                </header>
-                <a href="{{ featuredPost.url }}" class="image main"><img src="{{ featuredPost.data.image.src }}" alt="{{ featuredPost.data.image.alt }}" /></a>
-                <ul class="actions special">
-                    <li>
-                        <a href="{{ featuredPost.url }}" class="button large">Full Story</a>
-                    </li>
-                </ul>
-            </article>
+            {{ post_featured(featuredPost) }}
         {% endif %}
         {% if collections.post.length <= 1 %}
                 <p>There are no more posts yet.</p>
@@ -39,21 +28,7 @@ navigation:
             <section class="posts">
                 {% for post in collections.post %}
                     {% if post.url != featuredPost.url %}
-                        <article>
-                            <header>
-                                <span class="date">{{ post.date|postDate }}</span>
-                                <h2>
-                                    <a href="{{ post.url }}">{{ post.data.title }}</a>
-                                </h2>
-                            </header>
-                            <a href="#" class="image fit"><img src="{{ post.data.image.src }}" alt="{{ post.data.image.alt }}" /></a>
-                            <p>{{ post.data.description }}</p>
-                            <ul class="actions special">
-                                <li>
-                                    <a href="{{ post.url }}" class="button">Full Story</a>
-                                </li>
-                            </ul>
-                        </article>
+                        {{ post_item(post) }}
                     {% endif %}
                 {% endfor %}
             </section>

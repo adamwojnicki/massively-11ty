@@ -1,10 +1,10 @@
 ---
 title: Home
 layout: layout_home.njk
-navigation: 
-  title: Home
-  position: 0
-  link: /
+navigation:
+    title: Home
+    position: 0
+    link: /
 ---
 
 <!-- Main -->
@@ -13,22 +13,20 @@ navigation:
         <h1>{{ title }}</h1>
         <span class="image main"><img src="images/banner.jpg" alt="" /></span>
 
+        {% set featuredPost = collections.post[0] %}
         <!-- Featured Post -->
         <article class="post featured">
             <header class="major">
-                <span class="date">April 25, 2017</span>
+                <span class="date">{{ featuredPost.data.date }}</span>
                 <h2>
-                    <a href="#">And this is a<br />
-                        massive headline</a>
+                    <a href="{{ featuredPost.url }}">{{ featuredPost.data.title }}</a>
                 </h2>
-                <p>Aenean ornare velit lacus varius enim ullamcorper proin aliquam<br />
-                    facilisis ante sed etiam magna interdum congue. Lorem ipsum dolor<br />
-                    amet nullam sed etiam veroeros.</p>
+                <p>{{  featuredPost.data.description }}</p>
             </header>
-            <a href="#" class="image main"><img src="images/pic01.jpg" alt="" /></a>
+            <a href="{{ featuredPost.url }}" class="image main"><img src="images/pic01.jpg" alt="" /></a>
             <ul class="actions special">
                 <li>
-                    <a href="/posts/generic-post" class="button large">Full Story</a>
+                    <a href="{{ featuredPost.url }}" class="button large">Full Story</a>
                 </li>
             </ul>
         </article>

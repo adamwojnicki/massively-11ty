@@ -1,6 +1,5 @@
 export default async function (eleventyConfig) {
-    eleventyConfig.addPassthroughCopy("assets");
-    eleventyConfig.addPassthroughCopy("views/images");
+    eleventyConfig.addPassthroughCopy("src/assets");
     eleventyConfig.addCollection("navigation", function (collectionApi) {
         return collectionApi.getAll().filter(function (item) {
             return item.data.navigation;

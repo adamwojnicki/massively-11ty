@@ -1,5 +1,4 @@
 export default async function (eleventyConfig) {
-    eleventyConfig.addPassthroughCopy("src/assets");
     eleventyConfig.addCollection("navigation", function (collectionApi) {
         return collectionApi.getAll().filter(function (item) {
             return item.data.navigation;
@@ -12,11 +11,14 @@ export default async function (eleventyConfig) {
             day: "numeric",
         });
     });
+    eleventyConfig.addPassthroughCopy("src/assets");
+    eleventyConfig.addPassthroughCopy("src/assets/images");
     return {
         dir: {
             input: "src",
             layouts: "../_includes/layouts",
             includes: "../_includes",
+            data: "../_data",
         }
     };
 };

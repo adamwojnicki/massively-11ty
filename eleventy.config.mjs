@@ -15,8 +15,8 @@ export default async function (eleventyConfig) {
     return {
         dir: {
             input: "src",
-            layouts: "_layouts",
-            includes: "_includes",
+            layouts: "../_includes/layouts",
+            includes: "../_includes",
         }
     };
 };

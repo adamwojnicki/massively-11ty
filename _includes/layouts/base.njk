@@ -6,13 +6,13 @@
 -->
 <html>
 
-{% include "head.njk" %}
+{% include "partials/head.njk" %}
 
 <body class="is-preload">
     <!-- Wrapper -->
     <div id="wrapper" class="fade-in">
         {{ content|safe }}
-        {% include "scripts.njk" %}
+        {% include "partials/scripts.njk" %}
     </div>
 </body>
 

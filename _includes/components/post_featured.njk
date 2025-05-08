@@ -1,0 +1,17 @@
+{% macro post_featured(post) %}
+    <article class="post featured">
+        <header class="major">
+            <span class="date">{{ post.date|postDate }}</span>
+            <h2>
+                <a href="{{ post.url }}">{{ post.data.title }}</a>
+            </h2>
+            <p>{{ post.data.description }}</p>
+        </header>
+        <a href="{{ post.url }}" class="image main"><img src="{{ post.data.image.src }}" alt="{{ post.data.image.alt }}" /></a>
+        <ul class="actions special">
+            <li>
+                <a href="{{ post.url }}" class="button large">Full Story</a>
+            </li>
+        </ul>
+    </article>
+{% endmacro %}

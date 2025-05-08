@@ -1,0 +1,78 @@
+---
+title: Home
+layout: layout_home.njk
+navigation:
+    title: Home
+    position: 0
+    link: /
+---
+
+<!-- Main -->
+<div id="main">
+    <div class="inner">
+        <h1>{{ title }}</h1>
+        <span class="image main"><img src="/images/banner.jpg" alt="" /></span>
+
+        {% set featuredPost = collections.post|first %}
+        {% if featuredPost == null %}
+            <p>There are no posts yet.</p>
+        {% else %}
+            <article class="post featured">
+                <header class="major">
+                    <span class="date">{{ featuredPost.date|postDate }}</span>
+                    <h2>
+                        <a href="{{ featuredPost.url }}">{{ featuredPost.data.title }}</a>
+                    </h2>
+                    <p>{{ featuredPost.data.description }}</p>
+                </header>
+                <a href="{{ featuredPost.url }}" class="image main"><img src="{{ featuredPost.data.image.src }}" alt="{{ featuredPost.data.image.alt }}" /></a>
+                <ul class="actions special">
+                    <li>
+                        <a href="{{ featuredPost.url }}" class="button large">Full Story</a>
+                    </li>
+                </ul>
+            </article>
+        {% endif %}
+        {% if collections.post.length <= 1 %}
+                <p>There are no more posts yet.</p>
+        {% else %}
+            <section class="posts">
+                {% for post in collections.post %}
+                    {% if post.url != featuredPost.url %}
+                        <article>
+                            <header>
+                                <span class="date">{{ post.date|postDate }}</span>
+                                <h2>
+                                    <a href="{{ post.url }}">{{ post.data.title }}</a>
+                                </h2>
+                            </header>
+                            <a href="#" class="image fit"><img src="{{ post.data.image.src }}" alt="{{ post.data.image.alt }}" /></a>
+                            <p>{{ post.data.description }}</p>
+                            <ul class="actions special">
+                                <li>
+                                    <a href="{{ post.url }}" class="button">Full Story</a>
+                                </li>
+                            </ul>
+                        </article>
+                    {% endif %}
+                {% endfor %}
+            </section>
+        {% endif %}
+
+        <!-- Footer -->
+        <footer>
+            <div class="pagination">
+                <!--<a href="#" class="previous">Prev</a>-->
+                <a href="#" class="page active">1</a>
+                <a href="#" class="page">2</a>
+                <a href="#" class="page">3</a>
+                <span class="extra">&hellip;</span>
+                <a href="#" class="page">8</a>
+                <a href="#" class="page">9</a>
+                <a href="#" class="page">10</a>
+                <a href="#" class="next">Next</a>
+            </div>
+        </footer>
+
+    </div>
+</div>

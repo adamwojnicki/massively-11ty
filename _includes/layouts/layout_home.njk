@@ -3,5 +3,9 @@ layout: base.njk
 ---
 {% include "partials/intro.njk" %}
 {% include "partials/header.njk" %}
-{{ content|safe }}
+    <div id="main">
+        <div class="inner">
+            {{ content|safe }}
+        </div>
+    </div>
 {% include "partials/footer.njk" %}

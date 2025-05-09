@@ -2,52 +2,49 @@
 title: Home
 layout: layout_home.njk
 navigation:
-    title: Home
-    position: 0
-    link: /
+  title: Home
+  position: 0
+  link: /
 ---
 
 {% from "components/post_item.njk" import post_item %}
 {% from "components/post_featured.njk" import post_featured %}
 
-<!-- Main -->
-<div id="main">
-    <div class="inner">
-        <h1>{{ title }}</h1>
-        <span class="image main"><img src="/images/banner.jpg" alt="" /></span>
 
-        {% set featuredPost = collections.post|first %}
-        {% if featuredPost == null %}
-            <p>There are no posts yet.</p>
-        {% else %}
-            {{ post_featured(featuredPost) }}
-        {% endif %}
-        {% if collections.post.length <= 1 %}
-                <p>There are no more posts yet.</p>
-        {% else %}
-            <section class="posts">
-                {% for post in collections.post %}
-                    {% if post.url != featuredPost.url %}
-                        {{ post_item(post) }}
-                    {% endif %}
-                {% endfor %}
-            </section>
-        {% endif %}
 
-        <!-- Footer -->
-        <footer>
-            <div class="pagination">
-                <!--<a href="#" class="previous">Prev</a>-->
-                <a href="#" class="page active">1</a>
-                <a href="#" class="page">2</a>
-                <a href="#" class="page">3</a>
-                <span class="extra">&hellip;</span>
-                <a href="#" class="page">8</a>
-                <a href="#" class="page">9</a>
-                <a href="#" class="page">10</a>
-                <a href="#" class="next">Next</a>
-            </div>
-        </footer>
+<h1>{{ title }}</h1>
+<span class="image main"><img src="/images/banner.jpg" alt="" /></span>
 
+{% set featuredPost = collections.post|first %}
+
+{% if featuredPost == null %}
+    <p>There are no posts yet.</p>
+{% else %}
+    {{ post_featured(featuredPost) }}
+{% endif %}
+
+{% if collections.post.length <= 1 %} 
+    <p>There are no more posts yet.</p>
+{% else %}
+    <section class="posts">
+        {% for post in collections.post %}
+            {% if post.url != featuredPost.url %}
+                {{ post_item(post) }}
+            {% endif %}
+        {% endfor %}
+    </section>
+{% endif %}
+
+<footer>
+    <div class="pagination">
+        <!--<a href="#" class="previous">Prev</a>-->
+        <a href="#" class="page active">1</a>
+        <a href="#" class="page">2</a>
+        <a href="#" class="page">3</a>
+        <span class="extra">&hellip;</span>
+        <a href="#" class="page">8</a>
+        <a href="#" class="page">9</a>
+        <a href="#" class="page">10</a>
+        <a href="#" class="next">Next</a>
     </div>
-</div>
+</footer>

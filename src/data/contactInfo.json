@@ -1,0 +1,38 @@
+{
+  "contactInfo": [
+    {
+      "name": "email",
+      "value": "z2T0o@example.com"
+    },
+    {
+      "name": "phone",
+      "value": "123-456-7890"
+    },
+    {
+      "name": "address",
+      "value": "1234 Main St, Anytown, USA"
+    }
+  ],
+  "socialMedia": [
+    {
+      "name": "github",
+      "url": "https://github.com/username"
+    },
+    {
+      "name": "twitter",
+      "url": "https://twitter.com/username"
+    },
+    {
+      "name": "linkedin",
+      "url": "https://linkedin.com/in/username"
+    },
+    {
+      "name": "instagram",
+      "url": "https://instagram.com/username"
+    },
+    {
+      "name": "facebook",
+      "url": "https://facebook.com/username"
+    }
+  ]
+}

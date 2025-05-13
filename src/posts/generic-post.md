@@ -5,7 +5,7 @@ layout: article.njk
 date: Created
 tags: post
 image:
-  src: images/pic01.jpg
+  src: /images/pic01.jpg
   alt: alt img for post
 ---
 

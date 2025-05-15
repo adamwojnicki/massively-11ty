@@ -5,8 +5,9 @@ navigation:
   title: Home
   position: 0
   link: /
+components:
+  - type: intro
+    props:
+      title: Home
+  - type: post_listing
 ---
-
-{% include "components/intro.njk" %}
-{% include "components/post_listing.njk" %}
-

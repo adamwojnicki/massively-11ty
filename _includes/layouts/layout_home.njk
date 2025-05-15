@@ -5,7 +5,10 @@ layout: base.njk
 {% include "partials/header.njk" %}
     <div id="main">
         <div class="inner">
-            {{ content|safe }}
+            <!-- {{ content|safe }} -->
+            {% for component in components %}
+                {% include "render_component.njk" %}
+            {% endfor %}
         </div>
     </div>
 {% include "partials/footer.njk" %}

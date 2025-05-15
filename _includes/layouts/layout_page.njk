@@ -4,7 +4,13 @@ layout: base.njk
 {% include "partials/header.njk" %}
     <div id="main">
         <section class="post">
-            {{ content|safe }}
+            {% if components %}
+                {% for component in components %}
+                    {% include "render_component.njk" %}
+                {% endfor %}
+            {% else %}
+                {{ content|safe }}
+            {% endif %}
         </section>
     </div>
 {% include "partials/footer.njk" %}

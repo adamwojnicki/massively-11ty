@@ -9,5 +9,8 @@ components:
   - type: intro
     props:
       title: Home
+      img:
+        src: /images/pic03.jpg
+        alt: hswvoei
   - type: post_listing
 ---

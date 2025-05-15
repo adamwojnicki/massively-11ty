@@ -11,8 +11,12 @@ export default async function (eleventyConfig) {
             day: "numeric",
         });
     });
-    eleventyConfig.addPassthroughCopy("src/assets");
-    eleventyConfig.addPassthroughCopy("src/assets/images");
+
+    eleventyConfig.addPassthroughCopy("public");
+    eleventyConfig.addPassthroughCopy({ "src/assets/images": "images" });
+    eleventyConfig.addPassthroughCopy("src/assets/css");
+    eleventyConfig.addPassthroughCopy("src/assets/js");
+
     return {
         dir: {
             input: "src",

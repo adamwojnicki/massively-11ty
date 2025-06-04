@@ -1,4 +1,16 @@
+import markdownIt from "markdown-it"
+
 export default async function (eleventyConfig) {
+    let markdownLibrary = markdownIt({
+        html: true,
+        breaks: true,
+        linkify: true
+    });
+
+    eleventyConfig.setLibrary("md", markdownLibrary);
+    eleventyConfig.addFilter("markdown", function (content) {
+        return markdownLibrary.render(content);
+    });
     eleventyConfig.addCollection("navigation", function (collectionApi) {
         return collectionApi.getAll().filter(function (item) {
             return item.data.navigation;

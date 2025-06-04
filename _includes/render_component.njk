@@ -1,6 +1,12 @@
 {% if component.type == "intro" %}
   {% set props = component.props %}
   {% include "components/intro.njk" %}
+{% elif component.type == "major_title" %}
+  {% set props = component.props %}
+  {% include "components/major_title.njk" %}
+{% elif component.type == "md_content" %}
+  {% set props = component.props %}
+  {% include "components/md_content.njk" %}
 {% elif component.type == "post_listing" %}
   {% include "components/post_listing.njk" %}
 {% else %}

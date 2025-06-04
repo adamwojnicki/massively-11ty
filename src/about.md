@@ -6,12 +6,20 @@ navigation:
   position: 1
   link: /
 components:
+  - type: major_title
+    props:
+      title: main title
   - type: intro
     props:
       title: Something about me
-      description: |
-        ## Test title h2
       img:
         src: /images/pic04.jpg
         alt: hswvoei
+  - type: md_content
+    props:
+      content: |
+        # H1
+        ## H2
+        
+        Some random text
 ---

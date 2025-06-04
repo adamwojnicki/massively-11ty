@@ -7,6 +7,9 @@
 {% elif component.type == "md_content" %}
   {% set props = component.props %}
   {% include "components/md_content.njk" %}
+{% elif component.type == "heading_with_subtitle" %}
+  {% set props = component.props %}
+  {% include "components/heading_with_subtitle.njk" %}
 {% elif component.type == "post_listing" %}
   {% include "components/post_listing.njk" %}
 {% else %}

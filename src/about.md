@@ -19,4 +19,9 @@ components:
         ---
 
         Under **the** line
+  - type: heading_with_subtitle
+    props:
+      heading_level: h2
+      title: Heading title
+      content: Subtitle text
 ---

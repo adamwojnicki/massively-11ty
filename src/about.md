@@ -15,4 +15,8 @@ components:
         ## H2
         
         Some random text
+
+        ---
+
+        Under **the** line
 ---

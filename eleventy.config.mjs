@@ -1,4 +1,3 @@
-// const markdownIt = require("markdown-it");
 import markdownIt from "markdown-it"
 
 export default async function (eleventyConfig) {

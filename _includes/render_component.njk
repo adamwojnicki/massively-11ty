@@ -10,6 +10,9 @@
 {% elif component.type == "heading_with_subtitle" %}
   {% set props = component.props %}
   {% include "components/heading_with_subtitle.njk" %}
+{% elif component.type == "img_text" %}
+  {% set props = component.props %}
+  {% include "components/img_text.njk" %}
 {% elif component.type == "post_listing" %}
   {% include "components/post_listing.njk" %}
 {% else %}

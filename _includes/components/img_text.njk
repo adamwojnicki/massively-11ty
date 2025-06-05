@@ -1,0 +1,6 @@
+<p>
+    <span class="image {{ props.img_position or 'left' }}">
+        <img src="{{ props.img.src }}" alt="{{ props.img.alt }}"/>
+    </span>
+    {{ props.content|markdown|safe }}
+</p>

@@ -1,0 +1,9 @@
+<div class="box alt">
+    <div class="row gtr-50 gtr-uniform">
+        {% for image in props.images %}
+            <div class="col-4">
+                <span class="image fit"><img src="{{ image.src }}" alt="{{ image.alt }}"/></span>
+            </div>
+        {% endfor %}
+    </div>
+</div>

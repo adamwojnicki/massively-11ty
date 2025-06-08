@@ -13,6 +13,9 @@
 {% elif component.type == "img_text" %}
   {% set props = component.props %}
   {% include "components/img_text.njk" %}
+{% elif component.type == "photo_gallery" %}
+  {% set props = component.props %}
+  {% include "components/photo_gallery.njk" %}
 {% elif component.type == "post_listing" %}
   {% include "components/post_listing.njk" %}
 {% else %}

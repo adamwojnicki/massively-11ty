@@ -9,6 +9,10 @@ components:
   - type: major_title
     props:
       title: Photo gallery
+  - type: image_full
+    props:
+      src: /images/pic01.jpg
+      alt: main img
   - type: photo_gallery
     props:
       images:

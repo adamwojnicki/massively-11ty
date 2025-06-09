@@ -24,7 +24,10 @@ export default async function (eleventyConfig) {
         });
     });
     eleventyConfig.addPassthroughCopy({ "public": "/" });
-    eleventyConfig.addPassthroughCopy("src/assets");
+    eleventyConfig.addPassthroughCopy({ "src/assets/js": "/js" });
+    eleventyConfig.addPassthroughCopy({ "src/assets/css/fontawesome-all.min.css": "/css/fontawesome-all.min.css" });
+    eleventyConfig.addPassthroughCopy({ "src/assets/webfonts": "/webfonts" });
+
     return {
         dir: {
             input: "src",

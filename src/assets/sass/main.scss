@@ -1,10 +1,20 @@
-@import 'libs/vars';
-@import 'libs/functions';
-@import 'libs/mixins';
-@import 'libs/vendor';
-@import 'libs/breakpoints';
-@import 'libs/html-grid';
-@import 'libs/fixed-grid';
+@use "sass:meta";
+@use 'libs/vars';
+@use 'libs/functions';
+@use 'libs/mixins';
+@use 'libs/vendor';
+@use 'libs/breakpoints';
+@use 'libs/html-grid';
+@use 'libs/fixed-grid';
+@use "base/typography";
+@use "components/box";
+@use "components/button";
+@use "components/form";
+@use "components/list";
+@use "components/pagination";
+@use "components/section";
+@use "components/table";
+
 @import 'fontawesome-all.min.css';
 @import url('https://fonts.googleapis.com/css?family=Merriweather:300,700,300italic,700italic|Source+Sans+Pro:900');
 
@@ -16,7 +26,7 @@
 
 // Breakpoints.
 
-	@include breakpoints((
+	@include breakpoints.breakpoints((
 		default:   (1681px,   null     ),
 		xlarge:    (1281px,   1680px   ),
 		large:     (981px,    1280px   ),
@@ -29,43 +39,43 @@
 // Mixins.
 
 	@mixin color($p) {
-		@include color-typography($p);
-		@include color-box($p);
-		@include color-button($p);
-		@include color-form($p);
-		@include color-list($p);
-		@include color-section($p);
-		@include color-table($p);
-		@include color-pagination($p);
+		@include typography.color-typography($p);
+		@include box.color-box($p);
+		@include button.color-button($p);
+		@include form.color-form($p);
+		@include list.color-list($p);
+		@include section.color-section($p);
+		@include table.color-table($p);
+		@include pagination.color-pagination($p);
 	}
 
 // Base.
 
-	@import 'base/reset';
-	@import 'base/page';
-	@import 'base/typography';
+	@include meta.load-css('base/reset');
+	@include meta.load-css('base/page');
+	@include meta.load-css('base/typography');
 
 // Component.
 
-	@import 'components/row';
-	@import 'components/box';
-	@import 'components/button';
-	@import 'components/form';
-	@import 'components/icon';
-	@import 'components/image';
-	@import 'components/actions';
-	@import 'components/icons';
-	@import 'components/list';
-	@import 'components/section';
-	@import 'components/table';
-	@import 'components/pagination';
+	@include meta.load-css('components/row');
+	@include meta.load-css('components/box');
+	@include meta.load-css('components/button');
+	@include meta.load-css('components/form');
+	@include meta.load-css('components/icon');
+	@include meta.load-css('components/image');
+	@include meta.load-css('components/actions');
+	@include meta.load-css('components/icons');
+	@include meta.load-css('components/list');
+	@include meta.load-css('components/section');
+	@include meta.load-css('components/table');
+	@include meta.load-css('components/pagination');
 
 // Layout.
 
-	@import 'layout/wrapper';
-	@import 'layout/intro';
-	@import 'layout/header';
-	@import 'layout/nav';
-	@import 'layout/main';
-	@import 'layout/footer';
-	@import 'layout/navPanel';
+	@include meta.load-css('layout/wrapper');
+	@include meta.load-css('layout/intro');
+	@include meta.load-css('layout/header');
+	@include meta.load-css('layout/nav');
+	@include meta.load-css('layout/main');
+	@include meta.load-css('layout/footer');
+	@include meta.load-css('layout/navPanel');

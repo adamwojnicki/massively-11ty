@@ -1,3 +1,4 @@
+@use "sass:color";
 ///
 /// Massively by HTML5 UP
 /// html5up.net | @ajlkn
@@ -14,7 +15,7 @@
 		cursor: default;
 		position: relative;
 		margin: 0 auto;
-		width: calc(100% - #{_size(padding) * 2});
+		width: calc(100% - (_size(padding) * 2));
 		max-width: _size(wrapper);
 		z-index: 2;
 
@@ -183,7 +184,7 @@
 	#copyright {
 		@include color-typography(invert);
 		position: relative;
-		color: transparentize(_palette(invert, fg), 0.75);
+		color: color.adjust(_palette(invert, fg), $alpha: -0.75);
 		cursor: default;
 		font-family: _font(family-heading);
 		font-size: 0.8rem;
@@ -193,7 +194,7 @@
 		text-align: center;
 		text-transform: uppercase;
 		margin: (_size(padding) * 2) auto (_size(padding) * 4) auto;
-		width: calc(100% - #{_size(padding) * 2});
+		width: calc(100% - (_size(padding) * 2));
 		max-width: _size(wrapper);
 		z-index: 2;
 

@@ -1,3 +1,4 @@
+@use "sass:color";
 ///
 /// Massively by HTML5 UP
 /// html5up.net | @ajlkn
@@ -21,7 +22,7 @@
 		overflow: hidden;
 		padding: 0 2rem 0 0;
 		position: relative;
-		width: calc(100% - #{_size(padding) * 2});
+		width: calc(100% - (_size(padding) * 2));
 		max-width: _size(wrapper);
 		z-index: 2;
 
@@ -54,7 +55,7 @@
 
 						&:hover {
 							color: inherit !important;
-							background-color: transparentize(_palette(invert, fg), 0.9);
+							background-color: color.adjust(_palette(invert, fg), $alpha: -0.9);
 						}
 					}
 

@@ -1,3 +1,4 @@
+@use "sass:color";
 ///
 /// Massively by HTML5 UP
 /// html5up.net | @ajlkn
@@ -33,8 +34,8 @@
 		}
 
 		&.alt {
-			background-color: transparentize(_palette(bg), 0.125);
-			box-shadow: 0 0.125rem 0.75rem 0 transparentize(_palette(invert, bg), 0.75);
+			background-color: color.adjust(_palette(bg), $alpha: -0.125);
+			box-shadow: 0 0.125rem 0.75rem 0 color.adjust(_palette(invert, bg), $alpha: -0.75);
 			color: _palette(fg-bold);
 
 			&:hover {

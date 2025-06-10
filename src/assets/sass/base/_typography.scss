@@ -1,3 +1,4 @@
+@use "sass:color";
 ///
 /// Massively by HTML5 UP
 /// html5up.net | @ajlkn
@@ -121,7 +122,7 @@
 		border-left: solid 4px;
 		font-style: italic;
 		margin: 0 0 _size(element-margin) 0;
-		padding: (_size(element-margin) / 4) 0 (_size(element-margin) / 4) _size(element-margin);
+		padding: (_size(element-margin) * 0.25) 0 (_size(element-margin) * 0.25) _size(element-margin);
 	}
 
 	code {
@@ -180,7 +181,7 @@
 
 		a {
 			color: _palette($p, fg-bold);
-			border-bottom-color: transparentize(_palette($p, fg), 0.5);
+			border-bottom-color: color.adjust(_palette($p, fg), $alpha: -0.5);
 
 			&:hover {
 				border-bottom-color: transparent;

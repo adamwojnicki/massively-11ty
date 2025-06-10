@@ -44,7 +44,7 @@
 		}
 
 		&.fit {
-			width: calc(100% + #{_size(element-margin) * 0.5});
+			width: calc(100% + (_size(element-margin) * 0.5));
 
 			li {
 				@include vendor('flex-grow', '1');

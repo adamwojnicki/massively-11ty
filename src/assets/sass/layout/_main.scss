@@ -109,13 +109,13 @@
 
 		@include breakpoints.breakpoint('<=medium') {
 			@include fixed-grid-resize((columns: 2,
-					gutters: (_size(padding) * 2.5),
+					gutters: calc(_size(padding) * 2.5),
 					flush: false));
 		}
 
 		@include breakpoints.breakpoint('<=small') {
 			@include fixed-grid-resize((columns: 1,
-					gutters: (_size(padding) * 2),
+					gutters: calc(_size(padding) * 2),
 					prev-columns: 2,
 					flush: false));
 

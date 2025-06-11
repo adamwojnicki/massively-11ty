@@ -243,7 +243,7 @@
 		@include fixed-grid-columns($columns);
 
 		// Gutters specified?
-		@if ($gutters > 0) {
+		@if ($gutters) {
 
 			// Flush gutters?
 			@if ($flush) {
@@ -308,7 +308,7 @@
 	@include fixed-grid-columns($columns);
 
 	// Gutters specified?
-	@if ($gutters > 0) {
+	@if ($gutters) {
 
 		// Flush gutters?
 		@if ($flush) {

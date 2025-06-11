@@ -6,30 +6,34 @@
 
 /* Row */
 
-	.row {
-		@include html-grid(1.5rem);
+// @use "libs/vendor" as vendor;
+@use "../libs/breakpoints" as breakpoints;
+@use "../libs/html-grid" as grid;
 
-		@include breakpoint('<=xlarge') {
-			@include html-grid(1.5rem, 'xlarge');
-		}
+.row {
+	@include grid.html-grid(1.5rem);
 
-		@include breakpoint('<=large') {
-			@include html-grid(1.5rem, 'large');
-		}
-
-		@include breakpoint('<=medium') {
-			@include html-grid(1.5rem, 'medium');
-		}
-
-		@include breakpoint('<=small') {
-			@include html-grid(1.5rem, 'small');
-		}
-
-		@include breakpoint('<=xsmall') {
-			@include html-grid(1.5rem, 'xsmall');
-		}
-
-		@include breakpoint('<=xxsmall') {
-			@include html-grid(1.5rem, 'xxsmall');
-		}
+	@include breakpoints.breakpoint('<=xlarge') {
+		@include grid.html-grid(1.5rem, 'xlarge');
 	}
+
+	@include breakpoints.breakpoint('<=large') {
+		@include grid.html-grid(1.5rem, 'large');
+	}
+
+	@include breakpoints.breakpoint('<=medium') {
+		@include grid.html-grid(1.5rem, 'medium');
+	}
+
+	@include breakpoints.breakpoint('<=small') {
+		@include grid.html-grid(1.5rem, 'small');
+	}
+
+	@include breakpoints.breakpoint('<=xsmall') {
+		@include grid.html-grid(1.5rem, 'xsmall');
+	}
+
+	@include breakpoints.breakpoint('<=xxsmall') {
+		@include grid.html-grid(1.5rem, 'xxsmall');
+	}
+}

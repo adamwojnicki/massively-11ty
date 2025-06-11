@@ -1,5 +1,7 @@
 @use "sass:list";
 @use "sass:math";
+@use "sass:meta";
+@use "sass:string";
 
 /// Makes an element's :before pseudoelement a FontAwesome icon.
 /// @param {string} $content Optional content value to use.
@@ -55,11 +57,15 @@
 
 	$x: 0.1em;
 
-	@if math.unit(_size(element-margin))=='rem' {
+	@if meta.type-of(_size(element-margin)) !=number {
+		$x: 0;
+	}
+
+	@else if math.unit(_size(element-margin))=='rem' {
 		$x: 0.1rem;
 	}
 
-	padding: ($tb + list.nth($pad, 1)) ($lr + list.nth($pad, 2)) max($x, $tb - _size(element-margin) + list.nth($pad, 3)) ($lr + list.nth($pad, 4)) #{$important};
+	padding: calc($tb + list.nth($pad, 1)) calc($lr + list.nth($pad, 2)) max($x, $tb - _size(element-margin) + list.nth($pad, 3)) calc($lr + list.nth($pad, 4)) #{$important};
 
 }
 
